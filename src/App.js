@@ -12,7 +12,6 @@ function formatOperand(operand){
   const [integer, demical] = operand.split(".")
   if(demical == null) return INTEGER_FORMAT.format(integer)
   return `${INTEGER_FORMAT.format(integer)}.${demical}`
-
 }
 
 export const ACTIONS =  {
@@ -25,10 +24,8 @@ export const ACTIONS =  {
 }
 
 const evaluate = ({currentOperant, prevOperant,operation}) => {
-  console.log(currentOperant)
-  console.log(prevOperant)
-  const prev = parseFloat(prevOperant);
-  const current = parseFloat(currentOperant);
+  const current = parseFloat(prevOperant);
+  const prev = parseFloat(currentOperant);
   if(isNaN(prev) || isNaN(current)) return ''
   let result;
   switch (operation) {
